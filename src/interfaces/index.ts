@@ -6,3 +6,10 @@ export interface TabIconProps {
   icon: ImageSourcePropType | undefined
   color: string
 }
+export interface AoraButtonProps{
+    handlePress: () => void
+    title: string
+    containerStyles?: string
+    textStyles?: string
+    isLoading?: boolean
+}
