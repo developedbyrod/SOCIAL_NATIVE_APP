@@ -1,6 +1,7 @@
-import { Tabs } from "expo-router";
-import icons from "@/src/constants/icons";
-import TabIcon from "@/src/components/TabIcon";
+import { Tabs } from "expo-router"
+import icons from "@/src/constants/icons"
+import TabIcon from "@/src/components/TabIcon"
+import React from "react"
 
 export default function TabLayout() {
   return (
@@ -9,12 +10,12 @@ export default function TabLayout() {
         tabBarShowLabel: false,
         tabBarActiveTintColor: "#FFA001",
         tabBarInactiveTintColor: "#CDCDE0",
-        tabBarStyle:{
+        tabBarStyle: {
           backgroundColor: "#161622",
           borderTopWidth: 1,
           borderTopColor: "#232533",
-          height: 84
-        }
+          height: 84,
+        },
       }}
     >
       <Tabs.Screen
@@ -80,5 +81,5 @@ export default function TabLayout() {
         }}
       />
     </Tabs>
-  );
+  )
 }

@@ -1,21 +1,18 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import FontAwesome from "@expo/vector-icons/FontAwesome"
+import React from "react"
+import { useFonts } from "expo-font"
+import { Stack } from "expo-router"
+import * as SplashScreen from "expo-splash-screen"
+import { useEffect } from "react"
+import "react-native-reanimated"
 
-
-export {
-  ErrorBoundary,
-} from 'expo-router';
+export { ErrorBoundary } from "expo-router"
 
 export const unstable_settings = {
-  initialRouteName: '(tabs)',
-};
+  initialRouteName: "(tabs)",
+}
 
-SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -29,31 +26,30 @@ export default function RootLayout() {
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
     ...FontAwesome.font,
-  });
+  })
   useEffect(() => {
-    if (error) throw error;
-  }, [error]);
+    if (error) throw error
+  }, [error])
 
   useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync();
+      SplashScreen.hideAsync()
     }
-  }, [loaded]);
+  }, [loaded])
 
   if (!loaded) {
-    return null;
+    return null
   }
 
-  return <RootLayoutNav />;
+  return <RootLayoutNav />
 }
 
 function RootLayoutNav() {
-
   return (
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-      </Stack>
-  );
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+    </Stack>
+  )
 }
