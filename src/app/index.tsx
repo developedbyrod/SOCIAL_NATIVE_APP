@@ -3,6 +3,7 @@ import { Image, ScrollView, Text, View } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import AoraButton from "../components/AoraButton/AoraButton"
 import { StatusBar } from "expo-status-bar"
+import {router, Redirect} from "expo-router"
 
 const index = () => {
   return (
@@ -10,7 +11,7 @@ const index = () => {
 
       <ScrollView contentContainerStyle={{height: "100%"}}>
 
-        <View className="w-full justify-center items-center h-full px-4">
+        <View className="w-full justify-center items-center min-h-[85vh] px-4">
             <Image
                 className="w-[130px] h-[84px]"
                 resizeMode="contain"
@@ -43,7 +44,7 @@ const index = () => {
 
             <AoraButton 
                 title="Continue with Email"
-                handlePress={() => {}}
+                handlePress={() => {router.push('/signin')}}
                 containerStyles="w-full mt-7"
             />
         </View>

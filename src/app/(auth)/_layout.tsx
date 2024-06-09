@@ -1,45 +1,20 @@
 import React from "react"
-import FontAwesome from "@expo/vector-icons/FontAwesome"
-import { Link, Tabs } from "expo-router"
-import { Pressable } from "react-native"
 
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"]
-  color: string
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />
-}
-
-export default function TabLayout() {
+import { Stack } from "expo-router"
+import { StatusBar } from "expo-status-bar"
+export default function AuthLayout() {
   return (
-    <Tabs screenOptions={{}}>
-      <Tabs.Screen
-        name="signin"
-        options={{
-          title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Link href="/" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
-        }}
+    <Stack>
+      <Stack.Screen 
+          name="signin"
+          options={{ headerShown: false }} 
       />
-      <Tabs.Screen
-        name="signup"
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </Tabs>
+      <Stack.Screen 
+          name="signup" 
+          options={{ headerShown: false }}
+       />
+
+       <StatusBar backgroundColor="#161622" style="light" />
+    </Stack>
   )
 }

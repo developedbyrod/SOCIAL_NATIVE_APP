@@ -13,3 +13,11 @@ export interface AoraButtonProps{
     textStyles?: string
     isLoading?: boolean
 }
+export interface AoraFormFieldProps{
+  title: string;
+  value: string;
+  placeholder: string;
+  handleChangeText: (e: string) => void;
+  otherStyles: string;
+
+}
