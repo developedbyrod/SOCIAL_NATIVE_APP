@@ -21,6 +21,7 @@ const SignUp = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
+
         <View className="w-full justify-center h-full px-4 my-6">
           <Image
             source={require("../../assets/images/logo.png")}
@@ -83,6 +84,7 @@ const SignUp = () => {
           </View>
         </View>
       </ScrollView>
+
     </SafeAreaView>
   )
 }
